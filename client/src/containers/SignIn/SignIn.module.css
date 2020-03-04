@@ -1,0 +1,15 @@
+.SignIn {
+     position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: right;
+  text-align: center;
+  min-height: 20vh;
+  max-width: 25vh;
+  box-shadow:0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
