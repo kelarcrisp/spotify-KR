@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import SignIn from './containers/SignIn/SignIn';
+import Profile from './components/Profile/Profile'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 class App extends Component {
 
   getHashParams = () => {
@@ -14,9 +23,14 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App" >
-        <SignIn />
-      </div>
+      <Router>
+        <div className="App" >
+          <Switch>
+            <Route path="/profile" component={Profile} />
+            <Route path="/" component={SignIn} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
