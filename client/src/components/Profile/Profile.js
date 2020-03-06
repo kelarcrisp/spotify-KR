@@ -1,32 +1,59 @@
 import React, { Component } from 'react';
 import NavBar from '../../containers/NavBar/NavBar';
-import queryString from 'query-string';
-
+import queryString from 'query-string'
+import { Button, Icon } from "@blueprintjs/core";
+import classes from './Profile.module.css';
+import TopArtists from '../Profile/TopArtists/TopArtists';
 // This will be the page that is initially directed to from the signIn page
 class Profile extends Component {
-    constructor(props) {
-        super(props);
+    state = {
+        displayName: null,
+        followers: null,
+        images: null,
+        user: null,
+        followedArtists: null,
+        playlists: null,
+        topArtists: null,
+        topTracks: null
     }
 
+
+
     componentDidMount() {
-        let parsed = queryString.parse(this.props.location.pathname)
-        console.log(parsed, 'PARSED URI')
-
-        const accessToken = parsed.access_token
-        console.log(parsed, 'query code')
-
+        const parsed = queryString.parse(this.props.location.pathname)
+        let holder = [];
+        for (let i in parsed) {
+            holder.push(parsed[i])
+        }
+        /// -------- accessToken --------
+        let accessToken = holder[0]
+        let refreshToken = holder[1];
+        console.log(accessToken)
+        console.log(refreshToken)
         fetch('https://api.spotify.com/v1/me', {
-            headers: {
-                'Authorization': 'Bearer' + accessToken
-            }
-        }).then(response => response.json()).then(data => console.log(data))
-
+            headers: { 'Authorization': 'Bearer ' + accessToken }
+        }).then(response => response.json()).then(data => {
+            console.log(data)
+            this.setState({ displayName: data.display_name, followers: data.followers.total, images: data.images })
+            console.log(this.state.followers, 'my followers!')
+        })
+            .then(err => console.log(err))
     };
 
     render() {
+
         return (
             <div>
                 <NavBar />
+                <div className={classes.ProfileDetails}>
+                    {this.state.images ? <Icon icon="user" iconSize={100} /> : <Icon icon="user" iconSize={100} />}
+                    <div className={classes.SurroundingDetails}>
+                        <div className={classes.ProfileNumber}>{this.state.followers}<br></br>followers </div>
+                        <div> {this.state.displayName} <br></br> display name </div>
+                        <div>9 <br></br> playlist </div>
+                    </div>
+                </div>
+                <TopArtists />
             </div>
         );
     }
