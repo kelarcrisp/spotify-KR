@@ -1,0 +1,12 @@
+.TopArtistInfo img{
+       
+    display:block;
+    width: 100px;
+    border-radius: 50%;
+}
+.TopArtistInfo{
+  display: flex;                  /* establish flex container */
+  flex-direction: row; 
+}
+
+

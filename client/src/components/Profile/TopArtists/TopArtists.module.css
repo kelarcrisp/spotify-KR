@@ -1,0 +1,45 @@
+
+.TopArtistsContainer {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    '.              header          .'
+    'topArtistImage topArtistsInfo .'
+    '.              genre           . ';
+background-color:  #1FDC3E;
+margin:auto;
+}
+
+.TopArtistsHeader{
+    grid-area: header;
+}
+
+.TopArtistsImage{
+    grid-area: topArtistImage;
+    max-width: 50px;
+}
+
+.TopArtistsInfo{
+    grid-area: topArtistsInfo;
+}
+
+.TopArtists{
+    margin-top: 100px;
+}
+
+.TopArtistsHeader{
+align-items: center;
+
+}
+
+/* .TopArtistsImg{
+    position: fixed;
+    margin-top: 10px;
+    left:25px;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+} */
+

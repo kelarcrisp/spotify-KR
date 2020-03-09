@@ -1,0 +1,21 @@
+.TopTracksContainer {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    '.              header          .'
+    'topTracksImage topTracksInfo .'
+    '.              genre           . '
+}
+
+.TopTracksHeader{
+    grid-area: header;
+}
+
+.TopTracksImage{
+    grid-area: topTracksImage;
+}
+
+.TopTracksInfo{
+    grid-area: topTracksInfo;
+}

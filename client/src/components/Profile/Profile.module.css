@@ -1,16 +1,34 @@
-.ProfileDetails {
-    position: fixed;
-  top: 30%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
- font-size: 20px;
+.ProfileDetailsContainer{
+    display:grid;
+    grid-template-columns:  250px repeat(2, 1fr) 150px; 
+    grid-template-rows: 150px repeat(2, 300px) 150px;
+   grid-template-areas:
+    ".     .          .       ."
+    "navigation     userDetails     userDetails ."
+    "navigation     topArtists     TopSongs ."
+    "navigation     topArtists     TopSongs ."
+    "navigation     footer          footer      footer"
+
 }
 
-.SurroundingDetails {
-    display: flex;
-    flex-direction: row;
+
+.UserDetails{
+   grid-area: userDetails;
+
+} 
+
+.UserDetails div {
+    display:inline-block;
 }
-.SurroundingDetails div:hover {
-   color: green;
+.NavBar{
+    grid-area: navigation
+}
+
+.TopArtists{
+grid-area: topArtists
+
+}
+
+.TopSongs{
+    grid-area: TopSongs;
 }
