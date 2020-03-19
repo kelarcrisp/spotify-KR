@@ -23,8 +23,8 @@ margin: 0%;
 
 .TopArtistsInfo{
     grid-area: topArtistsInfo;
- max-height: fit-content;
- margin-left: 100px;
+    max-height: fit-content;
+    margin: 0px;
 }
 
 .TopArtists{

@@ -4,9 +4,35 @@
     width: 100px;
     border-radius: 50%;
 }
+
 .TopArtistInfo{
   display: flex;                  /* establish flex container */
   flex-direction: row; 
+  border: 1px solid red;
+}
+
+.ArtistNameGenre {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+}
+
+/* .ArtistNameGenre div:first-child{
+  font-size: 20px;
+  font-weight: 10em;
+}
+
+.ArtistNameGenre div:nth-child(2){
+  font-size: 12px;
+  font-weight: 1em;
+} */
+
+
+ul {
+  margin: 0px;
+  padding: 0 0 0 0;
 }
 
 
