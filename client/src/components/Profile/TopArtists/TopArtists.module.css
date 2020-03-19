@@ -4,11 +4,11 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    '.              header          .'
-    'topArtistImage topArtistsInfo .'
-    '.              genre           . ';
+    '.              .          .'
+    'topArtistImage topArtistsInfo '
+    '.           .           . ';
 background-color:  #1FDC3E;
-margin:auto;
+margin: 0%;
 }
 
 .TopArtistsHeader{
@@ -18,20 +18,20 @@ margin:auto;
 .TopArtistsImage{
     grid-area: topArtistImage;
     max-width: 50px;
+    left: 0;
 }
 
 .TopArtistsInfo{
     grid-area: topArtistsInfo;
+ max-height: fit-content;
+ margin-left: 100px;
 }
 
 .TopArtists{
     margin-top: 100px;
 }
 
-.TopArtistsHeader{
-align-items: center;
 
-}
 
 /* .TopArtistsImg{
     position: fixed;

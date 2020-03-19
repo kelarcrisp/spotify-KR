@@ -20,26 +20,26 @@ class Profile extends Component {
 
 
 
-    // componentDidMount() {
-    //     const parsed = queryString.parse(this.props.location.pathname)
-    //     let holder = [];
-    //     for (let i in parsed) {
-    //         holder.push(parsed[i])
-    //     }
-    //     /// -------- accessToken --------
-    //     let accessToken = holder[0]
-    //     let refreshToken = holder[1];
-    //     console.log(accessToken)
-    //     console.log(refreshToken)
-    //     fetch('https://api.spotify.com/v1/me', {
-    //         headers: { 'Authorization': 'Bearer ' + accessToken }
-    //     }).then(response => response.json()).then(data => {
-    //         console.log(data)
-    //         this.setState({ displayName: data.display_name, followers: data.followers.total, images: data.images })
-    //         console.log(this.state.followers, 'my followers!')
-    //     })
-    //         .then(err => console.log(err))
-    // };
+    componentDidMount() {
+        const parsed = queryString.parse(this.props.location.pathname)
+        let holder = [];
+        for (let i in parsed) {
+            holder.push(parsed[i])
+        }
+        /// -------- accessToken --------
+        let accessToken = holder[0]
+        let refreshToken = holder[1];
+        console.log(accessToken)
+        console.log(refreshToken)
+        fetch('https://api.spotify.com/v1/me', {
+            headers: { 'Authorization': 'Bearer ' + accessToken }
+        }).then(response => response.json()).then(data => {
+            console.log(data)
+            this.setState({ displayName: data.display_name, followers: data.followers.total, images: data.images })
+            console.log(this.state.followers, 'my followers!')
+        })
+            .then(err => console.log(err))
+    };
 
     render() {
         // next task is to make all of this under css grid!!

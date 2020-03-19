@@ -47,7 +47,7 @@ class TopArtists extends Component {
     // src = { x.artistsImages[0].url } />
 
     render() {
-        let topArtist = this.state.artistsInfo[0].artistsImages ?
+        let topArtists = this.state.artistsInfo[0].artistsImages ?
             this.state.artistsInfo.map((x, i) => {
                 //console.log(x.artistsImages[0].url, 'x..images!!!');
                 return <TopArtist
@@ -55,16 +55,12 @@ class TopArtists extends Component {
                     artistName={x.artistsNames}
                     imageSrc={x.artistsImages[0].url} />
             }) : 'not loaded yet!'
-        console.log(this.state.artistsInfo[0].artistsImages, 'rendered artistImages')
+        console.log(topArtists, 'top artist being rendered')
         return (
             <div className={classes.TopArtistsContainer} >
-                <p className={classes.TopArtistsHeader}>Top artists of all time</p>
-                <div className={classes.TopArtists}>
-                    {topArtist}
-                </div>
                 <div className={classes.TopArtistsInfo}>
-                    <p>{this.state.artistsNames} artistNames</p>
-                    <label style={{ fontSize: '12px' }}>{this.state.genre} genre</label>
+                    <p>Your Top 10 Artists!</p>
+                    {topArtists.slice(0, 10)}
                 </div>
             </div>
         );
