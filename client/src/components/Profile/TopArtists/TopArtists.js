@@ -19,14 +19,13 @@ class TopArtists extends Component {
         for (let i in parsed) {
             holder.push(parsed[i])
         }
-
+        
         let accessToken = holder[0]
         let refreshToken = holder[1];
 
         axios.get('https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term', {
             headers: { 'Authorization': 'Bearer ' + accessToken }
         }).then(response => response).then(data => {
-            console.log(data)
             this.setState({
                 artistsInfo: data.data.items.map(artist => ({
                     artistsId: artist.id,
@@ -35,9 +34,7 @@ class TopArtists extends Component {
                     artistGenres: artist.genres
                 }))
             })
-            console.log(data)
-            console.log(this.state.artistsInfo[0], 'artists info!!!')
-            console.log(this.state.artistsInfo[0].artistGenres[0], 'artist genres in promise!!')
+            
         })
     }
 
@@ -51,11 +48,12 @@ class TopArtists extends Component {
             this.state.artistsInfo.map((x, i) => {
                 //console.log(x.artistsImages[0].url, 'x..images!!!');
                 return <TopArtist
+                    key={x.id}
                     artistGenre={x.artistGenres[0]}
                     artistName={x.artistsNames}
                     imageSrc={x.artistsImages[0].url} />
             }) : 'not loaded yet!'
-        console.log(topArtists, 'top artist being rendered')
+            
         return (
             <div className={classes.TopArtistsContainer} >
                 <div className={classes.TopArtistsInfo}>
