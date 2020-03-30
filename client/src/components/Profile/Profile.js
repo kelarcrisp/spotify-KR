@@ -53,7 +53,7 @@ class Profile extends Component {
                         <TopArtists parsedQuery={this.props.location.pathname} />
                     </div>
                     {/* the top artists component will go here  */}
-                    <div className={classes.TopSongs}>
+                    <div className={classes.TopTracks}>
                         <TopTracks parsedQuery={this.props.location.pathname} />
                     </div>
                 </div>

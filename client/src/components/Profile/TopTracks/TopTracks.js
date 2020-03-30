@@ -47,21 +47,21 @@ class TopTracks extends Component {
     }
 
 
-    render() { console.log(this.state.tracksInfo, "tracksinfoooo")
+    render() {
         let topTracks = this.state.tracksInfo[0].albumsImages ?
         this.state.tracksInfo.map((x, i) => {
             //console.log(x.artistsImages[0].url, 'x..images!!!');
             return <TopTrack
                 key={x.id}
-                artistGenre={x.artistsNames[0].name}
-                artistName={x.tracksNames}
+                artistName={x.artistsNames[0].name}
+                trackName={x.tracksNames}
                 imageSrc={x.albumsImages[0].url} />
         }) : 'not loaded yet!'
     
         return (
-            <div className={classes.TopArtistsContainer} >
-                <div className={classes.TopArtistsInfo}>
-                    <p>Your Top 10 Artists!</p>
+            <div className={classes.TopTracksContainer} >
+                <div className={classes.TopTracksInfo}>
+                    <p>Your Top 10 Tracks!</p>
                     {topTracks.slice(0, 10)}
                 </div>
             </div>

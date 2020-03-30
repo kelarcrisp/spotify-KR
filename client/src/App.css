@@ -36,9 +36,6 @@
     transform: rotate(360deg);
   }
 }
-div,button {
-  margin: 15px
-}
 
 @import "~normalize.css";
 @import "~@blueprintjs/core/lib/css/blueprint.css";

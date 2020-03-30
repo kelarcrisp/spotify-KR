@@ -9,8 +9,8 @@
     grid-template-areas:
     ".     .          .       ."
     "navigation     userDetails     userDetails ."
-    "navigation     topArtists     TopSongs ."
-    "navigation     topArtists     TopSongs ."
+    "navigation     topArtists     topTracks ."
+    "navigation     topArtists     topTracks ."
     "navigation     footer          footer      footer"
 
 }
@@ -24,15 +24,19 @@
 .UserDetails div {
     display:inline-block;
 }
+
 .NavBar{
     grid-area: navigation
 }
 
 .TopArtists{
-grid-area: topArtists
-
+    grid-area: topArtists;
+    margin: 15px;
+    margin-left: 25%;
 }
 
-.TopSongs{
-    grid-area: TopSongs;
+.TopTracks{
+    grid-area: topTracks;
+    margin: 15px;
+    margin-left: 25%;
 }

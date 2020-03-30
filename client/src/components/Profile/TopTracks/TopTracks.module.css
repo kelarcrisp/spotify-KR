@@ -1,19 +1,11 @@
 .TopTracksContainer {
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 300px);
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    '.              header          .'
-    'topTracksImage topTracksInfo .'
-    '.              genre           . '
-}
-
-.TopTracksHeader{
-    grid-area: header;
-}
-
-.TopTracksImage{
-    grid-area: topTracksImage;
+    'topTracksInfo'
+    'topTracksInfo'
+    '.            ';
 }
 
 .TopTracksInfo{

@@ -1,17 +1,17 @@
-.TopArtistInfo img{
+.TopTrackInfo img{
        
     display:block;
     width: 100px;
     border-radius: 50%;
 }
 
-.TopArtistInfo{
+.TopTrackInfo{
   display: flex;                  /* establish flex container */
   flex-direction: row; 
   border: 1px solid red;
 }
 
-.ArtistNameGenre {
+.TopTrackList {
   align-items: center;
   text-align: center;
   width: 100%;

@@ -6,11 +6,11 @@ const TopTrack = props => {
         <div>
             <ul>
                 <li style={{ listStyleType: 'none' }}>
-                    <div className={classes.TopArtistInfo}>
+                    <div className={classes.TopTrackInfo}>
                         <img src={props.imageSrc} />
-                        <div className={classes.ArtistNameGenre}>
+                        <div className={classes.TopTrackList}>
+                            <div>{props.trackName}</div>
                             <div>{props.artistName}</div>
-                            <div>{props.artistGenre}</div>
                         </div>
                     </div>
                 </li>

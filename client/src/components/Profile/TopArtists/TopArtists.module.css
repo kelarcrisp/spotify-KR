@@ -1,34 +1,15 @@
-
 .TopArtistsContainer {
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 300px);
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    '.              .          .'
-    'topArtistImage topArtistsInfo '
-    '.           .           . ';
-background-color:  #1FDC3E;
-margin: 0%;
-}
-
-.TopArtistsHeader{
-    grid-area: header;
-}
-
-.TopArtistsImage{
-    grid-area: topArtistImage;
-    max-width: 50px;
-    left: 0;
+    'topArtistsInfo'
+    'topArtistsInfo'
+    '.             ';
 }
 
 .TopArtistsInfo{
     grid-area: topArtistsInfo;
-    max-height: fit-content;
-    margin: 0px;
-}
-
-.TopArtists{
-    margin-top: 100px;
 }
 
 
